@@ -1,5 +1,6 @@
+
 server:
-  port: 50005
+  port: 50001
 spring:
   rabbitmq:
     host: localhost
@@ -15,7 +16,7 @@ spring:
       host: localhost
   oauth2:
     resource:
-      userInfoUri: http://localhost:7777/id_cards
+      userInfoUri: http://localhost:7777/credential
 
 eureka:
   client:
@@ -25,6 +26,20 @@ eureka:
     statusPageUrlPath: /actuator/info
     healthCheckUrlPath: /actuator/health
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+management:
+   security:
+     enabled: false
+   health:
+     defaults: true
+     sensitive: true
+   endpoints:
+     web:
+       expose: "*"
+     health:
+       show-details: true
+     cors:
+       allowed-origins: "*"
+       allowed-methods: GET,POST
 
 planes:
   service: IMAGE_RECOGNITION
@@ -41,7 +56,7 @@ bookings:
 auth:
   service: AUTH
   path: /oauth/token
-    
+
 
 config:
   oauth2:

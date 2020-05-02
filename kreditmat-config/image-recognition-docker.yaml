@@ -1,5 +1,5 @@
 server:
-  port: 50005
+  port: 50001
 spring:
   rabbitmq:
     host: rabbitmq
@@ -66,7 +66,7 @@ config:
       /myh1zM6m8cbL5cYFPyP099thbVxzJkjHWqywvQih/qOOjliomKbM9pxG8Z1dB26
       hL9dSAZuA8xExjlPmQIDAQAB
       -----END PUBLIC KEY-----
-    
+
 
 config:
   oauth2:
