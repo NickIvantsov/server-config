@@ -56,11 +56,11 @@ zuul:
     image_recognition:
       path: /api/v1/image_recognition/**
       sensitiveHeaders:
-      serviceId: planes
+      serviceId: image_recognition
     authorization:
       path: /api/v1/authorization/**
       sensitiveHeaders:
-      serviceId: flights
+      serviceId: authorization
   host:
     connectTimeoutMillis: 3000
     socketTimeoutMillis: 3000
