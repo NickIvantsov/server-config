@@ -5,14 +5,11 @@ eureka:
   instance:
     hostname: discovery
     health-check-url-path: /actuator/health
-    status-page-url-path: /actuator/info    
+    status-page-url-path: /actuator/info
   client:
     registerWithEureka: false
     fetchRegistry: false
 logging:
   level:
-    org.springframework.cloud: 'DEBUG'   
-  
-
-
-    
+    com.netflix.discovery: 'ON'
+    org.springframework.cloud: 'DEBUG'
