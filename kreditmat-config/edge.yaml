@@ -64,8 +64,3 @@ zuul:
   host:
     connectTimeoutMillis: 3000
     socketTimeoutMillis: 3000
-proxy:
-  auth:
-    routes:
-      image_recognition: oauth2
-      authorization: oauth2
