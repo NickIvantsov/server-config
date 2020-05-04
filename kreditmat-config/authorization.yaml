@@ -22,3 +22,6 @@ eureka:
     statusPageUrlPath: /actuator/info
     healthCheckUrlPath: /actuator/health
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+image_recognition:
+  service: IMAGE_RECOGNITION
