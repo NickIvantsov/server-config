@@ -8,8 +8,27 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/
+  instance:
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 logging:
   level:
     com.netflix.discovery: 'ON'
     org.springframework.cloud.gateway: 'TRACE'
+
+management:
+  security:
+    enabled: false
+  health:
+    defaults: true
+    sensitive: true
+  endpoints:
+    web:
+      expose: "*"
+    health:
+      show-details: true
+    cors:
+      allowed-origins: "*"
+      allowed-methods: GET,POST
