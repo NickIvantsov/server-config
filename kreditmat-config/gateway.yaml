@@ -16,6 +16,10 @@ management:
      defaults: true
      sensitive: true
    endpoints:
+     beans:
+       id: springbeans
+       sensitive: false
+       enabled: true
      web:
        expose: "*"
      health:
