@@ -39,3 +39,32 @@ logging:
   level:
     ROOT: INFO
     org.springframework.web: DEBUG
+
+management:
+  security:
+    enabled: false
+  health:
+    defaults: true
+    sensitive: true
+  endpoints:
+    web:
+      expose: "*"
+    health:
+      show-details: true
+    cors:
+      allowed-origins: "*"
+      allowed-methods: GET,POST
+
+zuul:
+  routes:
+    image_recognition:
+      path: /api/v1/image_recognition/**
+      sensitiveHeaders:
+      serviceId: image_recognition
+    authorization:
+      path: /api/v1/authorization/**
+      sensitiveHeaders:
+      serviceId: authorization
+  host:
+    connectTimeoutMillis: 3000
+    socketTimeoutMillis: 3000
