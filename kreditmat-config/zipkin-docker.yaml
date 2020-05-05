@@ -4,7 +4,7 @@ server:
 spring:
   rabbitmq:
     port: 15672
-    host: rabbitmq
+    host: localhost
   datasource:
     schema: classpath:/mysql.sql
     url: jdbc:mysql://mysql:3306/zipkin?autoReconnect=true
