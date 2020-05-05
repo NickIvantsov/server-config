@@ -4,8 +4,8 @@ server:
 eureka:
   instance:
     hostname: localhost
-    health-check-url-path: /actuator/health
-    status-page-url-path: /actuator/info    
+    health-check-url-path: /health
+    status-page-url-path: /info    
   client:
     registerWithEureka: false
     fetchRegistry: false
@@ -13,7 +13,3 @@ logging:
   level:
     com.netflix.discovery: 'ON'
     org.springframework.cloud: 'DEBUG'
-  
-
-
-    
