@@ -20,8 +20,6 @@ endpoints:
     sensitive: false
 
 eureka:
-  instance:
-      leaseRenewalIntervalInSeconds: 10
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
@@ -49,34 +47,34 @@ management:
       show-details: true
     cors:
       allowed-origins: "*"
-      allowed-methods: GET,POST 
+      allowed-methods: GET,POST
 
 zuul:
   routes:
     planes:
       path: /api/v1/planes/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
       serviceId: planes
     flights:
       path: /api/v1/flights/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
       serviceId: flights
     fares:
       path: /api/v1/fares/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
       serviceId: fares
     passengers:
       path: /api/v1/passengers/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
       serviceId: passengers
     payments:
       path: /api/v1/payments/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
       serviceId: payments
     auth:
       path: /api/v1/auth/**
-      sensitiveHeaders: 
-      serviceId: auth    
+      sensitiveHeaders:
+      serviceId: auth
     bookings:
       path: /api/v1/bookings/**
       sensitiveHeaders:
