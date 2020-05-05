@@ -48,18 +48,50 @@ management:
       show-details: true
     cors:
       allowed-origins: "*"
-      allowed-methods: GET,POST
+      allowed-methods: GET,POST 
 
 zuul:
   routes:
-    image_recognition:
-      path: /api/v1/image_recognition/**
+    planes:
+      path: /api/v1/planes/**
+      sensitiveHeaders: 
+      serviceId: planes
+    flights:
+      path: /api/v1/flights/**
+      sensitiveHeaders: 
+      serviceId: flights
+    fares:
+      path: /api/v1/fares/**
+      sensitiveHeaders: 
+      serviceId: fares
+    passengers:
+      path: /api/v1/passengers/**
+      sensitiveHeaders: 
+      serviceId: passengers
+    payments:
+      path: /api/v1/payments/**
+      sensitiveHeaders: 
+      serviceId: payments
+    auth:
+      path: /api/v1/auth/**
+      sensitiveHeaders: 
+      serviceId: auth
+    bookings:
+      path: /api/v1/bookings/**
       sensitiveHeaders:
-      serviceId: image_recognition
-    authorization:
-      path: /api/v1/authorization/**
+      serviceId: bookings
+    ecommerce:
+      path: /api/v1/ecommerce/**
       sensitiveHeaders:
-      serviceId: authorization
-  host:
-    connectTimeoutMillis: 3000
-    socketTimeoutMillis: 3000
+      serviceId: ecommerce
+
+proxy:
+  auth:
+    routes:
+      planes: oauth2
+      flighst: oauth2
+      fares: oauth2
+      bookings: oauth2
+      payments: oauth2
+      passengers: oauth2
+      ecommerce: oauth2
