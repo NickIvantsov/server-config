@@ -21,15 +21,10 @@ endpoints:
     sensitive: false
 
 eureka:
-  instance:
-      preferIpAddress: true
-      leaseRenewalIntervalInSeconds: 10
   client:
-    fetchRegistry: true
-    registerWithEureka: true
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      registryFetchIntervalSeconds: 5
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
   instance:
     statusPageUrlPath: /info
     healthCheckUrlPath: /health
