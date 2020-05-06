@@ -32,7 +32,12 @@ eureka:
     statusPageUrlPath: /info
     healthCheckUrlPath: /health
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    
+
 management:
    security:
       enabled: false
+
+spring:
+   boot:
+      admin:
+         url: http://localhost:50015/
