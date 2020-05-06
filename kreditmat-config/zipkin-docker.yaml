@@ -3,7 +3,7 @@ server:
 
 spring:
   rabbitmq:
-    port: 15672
+    port: 5672
     host: localhost
   datasource:
     schema: classpath:/mysql.sql
@@ -32,3 +32,18 @@ eureka:
     statusPageUrlPath: /info
     healthCheckUrlPath: /health
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+   security:
+     enabled: false
+   health:
+     defaults: true
+     sensitive: true
+   endpoints:
+     web:
+       expose: "*"
+     health:
+       show-details: true
+     cors:
+       allowed-origins: "*"
+       allowed-methods: GET,POST
