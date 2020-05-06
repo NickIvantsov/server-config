@@ -29,8 +29,8 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/
   instance:
-    statusPageUrlPath: /info
-    healthCheckUrlPath: /health
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 management:
