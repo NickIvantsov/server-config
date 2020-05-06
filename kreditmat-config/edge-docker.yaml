@@ -56,3 +56,7 @@ zuul:
       path: /api/v1/image_recognition/**
       sensitiveHeaders:
       serviceId: image_recognition
+    authorization:
+      path: /api/v1/authorization/**
+      sensitiveHeaders:
+      serviceId: authorization
