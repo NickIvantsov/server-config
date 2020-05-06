@@ -40,8 +40,3 @@ management:
 
 image_recognition:
   service: IMAGE_RECOGNITION
-
-spring:
-   boot:
-      admin:
-         url: http://localhost:9000/
